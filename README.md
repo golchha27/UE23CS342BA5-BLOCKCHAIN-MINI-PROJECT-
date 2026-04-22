@@ -113,13 +113,20 @@ The same receiver confirms pickup:
 confirmPickup(1)
 Status becomes: PickedUp
 
-Smart Contract Security
+**Smart Contract Security**
+
 Donor Cannot Claim Own Donation
+
 require(msg.sender != donor, "Donor cannot claim");
+
 Already Claimed Donations Cannot Be Claimed Again
+
 require(status == Status.Available, "Already claimed");
+
 Only Receiver Can Confirm Pickup
+
 require(msg.sender == receiver, "Only receiver can confirm");
+
 Deployment Steps
 Step 1
 Open Remix IDE
