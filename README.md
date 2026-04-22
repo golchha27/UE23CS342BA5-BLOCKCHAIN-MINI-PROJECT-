@@ -76,13 +76,11 @@ Only valid users can perform specific actions based on contract rules.
 
 ---
 
-## Smart Contract Functions
-
-### createDonation()
+** Smart Contract Functions**
+ createDonation()
 
 Used by donor to create a food donation.
 
-```solidity
 createDonation("Burger")
 claimDonation()
 Used by receiver to claim a donation.
