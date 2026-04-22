@@ -33,12 +33,6 @@ The main objective of this project is to reduce food wastage and improve transpa
 | Test Network | Sepolia Testnet |
 | Development IDE | Remix IDE |
 | Wallet Integration | MetaMask |
-| Frontend | HTML, CSS, JavaScript |
-| Blockchain Library | Ethers.js |
-| Optional Storage | IPFS |
-| Version Control | GitHub |
-
----
 
 **Features**
 
