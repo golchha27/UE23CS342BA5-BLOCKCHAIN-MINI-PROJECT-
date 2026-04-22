@@ -1,4 +1,4 @@
-# UE23CS342BA5-BLOCKCHAIN-MINI-PROJECT
+# UE23CS342BA5 - BLOCKCHAIN MINI PROJECT
 
 # Blockchain-Based Food Donation Tracking System
 
@@ -42,7 +42,7 @@ This system helps to:
 |---|---|
 | Smart Contract | Solidity |
 | Blockchain Platform | Ethereum |
-| Test Network | Sepolia Testnet |
+| Test Network | Ethereum Sepolia Testnet |
 | Development IDE | Remix IDE |
 | Wallet Integration | MetaMask |
 
@@ -76,134 +76,195 @@ Only valid users can perform specific actions based on contract rules.
 
 ---
 
-** Smart Contract Functions**
- createDonation()
+## Smart Contract Functions
+
+### `createDonation()`
 
 Used by donor to create a food donation.
 
-createDonation("Burger")
-claimDonation()
+```solidity
+createDonation("Burger");
+```
+
+### `claimDonation()`
+
 Used by receiver to claim a donation.
 
-claimDonation(1)
-confirmPickup()
+```solidity
+claimDonation(1);
+```
+
+### `confirmPickup()`
+
 Used by receiver to confirm food pickup.
 
-confirmPickup(1)
-getDonation()
+```solidity
+confirmPickup(1);
+```
+
+### `getDonation()`
+
 Used to fetch donation details.
 
-getDonation(1)
-Workflow
-Step 1 — Donor Creates Donation
+```solidity
+getDonation(1);
+```
+
+---
+
+## Workflow
+
+### Step 1 — Donor Creates Donation
+
 Account 1 creates a donation:
 
-createDonation("Rice Packets")
-Status becomes: Available
+```solidity
+createDonation("Rice Packets");
+```
 
-Step 2 — Receiver Claims Donation
+Status becomes: **Available**
+
+### Step 2 — Receiver Claims Donation
+
 Account 2 or Account 3 claims the donation:
 
-claimDonation(1)
-Status becomes: Claimed
+```solidity
+claimDonation(1);
+```
 
-Step 3 — Receiver Confirms Pickup
+Status becomes: **Claimed**
+
+### Step 3 — Receiver Confirms Pickup
+
 The same receiver confirms pickup:
 
-confirmPickup(1)
-Status becomes: PickedUp
+```solidity
+confirmPickup(1);
+```
 
-**Smart Contract Security**
+Status becomes: **PickedUp**
 
-Donor Cannot Claim Own Donation
+---
 
+## Smart Contract Security
+
+### Donor Cannot Claim Own Donation
+
+```solidity
 require(msg.sender != donor, "Donor cannot claim");
+```
 
-Already Claimed Donations Cannot Be Claimed Again
+### Already Claimed Donations Cannot Be Claimed Again
 
+```solidity
 require(status == Status.Available, "Already claimed");
+```
 
-Only Receiver Can Confirm Pickup
+### Only Receiver Can Confirm Pickup
 
+```solidity
 require(msg.sender == receiver, "Only receiver can confirm");
+```
 
-Deployment Steps
-Step 1
+---
+
+## Deployment Steps
+
+### Step 1
 Open Remix IDE
 
-Step 2
+### Step 2
 Paste Solidity smart contract code
 
-Step 3
+### Step 3
 Compile using Solidity Compiler
 
-Step 4
+### Step 4
 Open MetaMask and switch to:
 
-Sepolia Testnet
-Step 5
+**Sepolia Testnet**
+
+### Step 5
 Get free Sepolia ETH using faucet
 
-Step 6
+### Step 6
 In Remix select:
 
-Browser Extension / Injected Provider
-Step 7
+**Browser Extension / Injected Provider**
+
+### Step 7
 Connect MetaMask wallet
 
-Step 8
+### Step 8
 Deploy contract and confirm transaction
 
-Testing
-Test Case 1
-Create donation using Account 1
+---
 
-createDonation("Burger")
-Test Case 2
-Claim donation using Account 3
+## Testing
 
-claimDonation(1)
-Test Case 3
-Confirm pickup using same receiver account
+### Test Case 1
 
-confirmPickup(1)
-Test Case 4
-Check donation details
+```solidity
+createDonation("Burger");
+```
 
-getDonation(1)
-Type of Blockchain
+### Test Case 2
+
+```solidity
+claimDonation(1);
+```
+
+### Test Case 3
+
+```solidity
+confirmPickup(1);
+```
+
+### Test Case 4
+
+```solidity
+getDonation(1);
+```
+
+---
+
+## Type of Blockchain
+
 This project uses a:
 
-Public Blockchain
+**Public Blockchain**
+
 Specifically:
 
-Ethereum Sepolia Testnet
+**Ethereum Sepolia Testnet**
+
 Because it provides:
 
-Transparency
+- Transparency
+- Security
+- Decentralization
+- Public verification
 
-Security
+---
 
-Decentralization
+## Consensus Algorithm
 
-Public verification
-
-Consensus Algorithm
 This project uses Ethereum’s:
 
-Proof of Stake (PoS)
-Why PoS?
-Energy efficient
+**Proof of Stake (PoS)**
 
-Secure validation
+### Why PoS?
 
-Decentralized verification
+- Energy efficient
+- Secure validation
+- Decentralized verification
+- Faster transaction confirmation
+- Better scalability than Proof of Work
 
-Faster transaction confirmation
+---
 
-Better scalability than Proof of Work
+## Conclusion
 
-Conclusion
 The Blockchain-Based Food Donation Tracking System successfully demonstrates how blockchain technology can improve trust, transparency, and accountability in food donation processes.
 
 The project removes the need for a central administrator and ensures secure donation tracking using smart contracts and MetaMask integration.
